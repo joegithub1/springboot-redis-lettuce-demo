@@ -1,0 +1,24 @@
+spring:
+  redis:
+    #模式 single:单机模式，sentinel: 哨兵模式
+    model: single
+    #公共配置-开始
+    timeout: 600000
+    lettuce:
+      pool:
+        max-active: 100
+        max-wait: -1
+        max-idle: 8
+        min-idle: -1
+    #单机模式配置-开始
+    port: 6379
+    host: 127.0.0.1
+    password: xiangyun
+    database: 4
+    #哨兵模式配置-开始
+#    sentinel:
+#      master: mymaster
+#      nodes: 192.168.0.108:26370,192.168.0.108:26371,192.168.0.108:26372
+#      password:
+server:
+  port: 8099
